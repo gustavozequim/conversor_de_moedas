@@ -14,18 +14,33 @@ def main():
     moeda_para_converter = int(input("Agora digite para qual moeda deseja converter: "))
     match moeda_para_converter:
         case 1:#converte para dólar
-            # breakpoint()
             if moeda_atual == ops[1] or moeda_atual == '2': #se a moeda atual for real
                 result = moeda_sem_conversao / 5
-                print(result)
+                print(f'{result:.2f} dólares')
             elif moeda_atual == ops[2] or moeda_atual == '3': #se a moeda atual for euro
                 result = moeda_sem_conversao * 1.17
-                print(result)
+                print(f'{result:.2f} dólares')
+            else:
+                print("Moeda já está em dólar")
         case 2:#converte para real
-                result = moeda_sem_conversao * 5
-                print(result)
+            if moeda_atual == ops[1] or moeda_atual == '1': #se a moeda atual for dólar
+                result = moeda_sem_conversao / 5
+                print(f'{result:.2f} reais')
+            elif moeda_atual == ops[2] or moeda_atual == '3': #se a moeda atual for euro
+                result = moeda_sem_conversao * 6.20
+                print(f'{result:.2f} reais')
+            else:
+                print("Moeda já está em real")
         case 3:#converte para euro
-            ...
-    print("Penis")
+            if moeda_atual == ops[1] or moeda_atual == '2': #se a moeda atual for real
+                result = moeda_sem_conversao / 6.20
+                print(f'{result:.2f} euros')
+            elif moeda_atual == ops[2] or moeda_atual == '1': #se a moeda atual for dólar
+                result = moeda_sem_conversao / 1.17
+                print(f'{result:.2f} euros')
+            else:
+                print("Moeda já está em euro")
+    
+
 if __name__ =="__main__":
     main()
